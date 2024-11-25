@@ -1,3 +1,5 @@
+![success screenshot](https://github.com/fountum/acit-2420-assignment-3/blob/main/success.png)
+
 ## Prerequisites
 Install `nginx` and `ufw`.
 

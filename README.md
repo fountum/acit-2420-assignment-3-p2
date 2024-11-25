@@ -1,8 +1,3 @@
-# Droplet IP
-```
-146.190.119.238
-```
-
 ## Prerequisites
 Install `nginx` and `ufw`.
 
@@ -26,7 +21,6 @@ You can check if the service for timer has been started and enabled using the co
 ```
 systemctl status <UNIT_NAME>
 ```  
-put a screen shot of output here -s   
 
 Once you've had the timer active, you can check if it has been triggering the service at the correct time using `journalctl -u generate-index`. Look for the time the service should be triggered (13:00:00 UTC/05:00:00 PST).  
 

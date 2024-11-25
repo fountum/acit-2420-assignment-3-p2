@@ -1,3 +1,8 @@
+# Droplet IP
+```
+146.190.119.238
+```
+
 ## Prerequisites
 Install `nginx` and `ufw`.
 
@@ -6,7 +11,9 @@ Install `nginx` and `ufw`.
 Running web server (or any other process or service) as a system user instead of a regular user or root adds additional security. Systems users can be restricted to only access files and directories needed for their process, limiting the damage that can be caused by a bug or error.  
 
 Create a new system user "webgen" with the `useradd` command:
-``` sudo useradd --system -s /usr/bin/nologin -d /var/lib/webgen -M webgen ```
+```
+sudo useradd --system -s /usr/bin/nologin -d /var/lib/webgen -M webgen
+```
 
 This command will set `/var/lib/webgen` as the home directory of the system user but won't create it. Copy the `webgen` folder from this repository into `/var/lib/` to create the home directory.  
 
@@ -16,7 +23,9 @@ The `generate-index` timer and service file will run the script `generate_index`
 Clone `generate-index.service` and `generate-index.timer` into `/etc/systemd/system/`. Enable and start both unit files.
 
 You can check if the service for timer has been started and enabled using the command:
-```systemctl status <UNIT_NAME>```  
+```
+systemctl status <UNIT_NAME>
+```  
 put a screen shot of output here -s   
 
 Once you've had the timer active, you can check if it has been triggering the service at the correct time using `journalctl -u generate-index`. Look for the time the service should be triggered (13:00:00 UTC/05:00:00 PST).  

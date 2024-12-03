@@ -4,3 +4,6 @@ Description=Runs generate-index.service everyday at 05:00 PST
 [Timer]
 OnCalendar=*-*-* 05:00:00 America/Vancouver
 Persistent=true
+
+[Install]
+WantedBy=timers.target

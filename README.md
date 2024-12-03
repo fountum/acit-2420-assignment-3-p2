@@ -27,7 +27,7 @@ You can check if the service for timer has been started and enabled using the co
 Once you've had the timer active, you can check if it has been triggering the service at the correct time using `journalctl -u generate-index`. Look for the time the service should be triggered (13:00:00 UTC/05:00:00 PST).  
 
 ## Step 4: Configuring and enabling nginx
-Replace `nginx.conf` in `/etc/nginx/` with the copy in this repository. Then create the directoires `sites-available` and `enabled-sites` in `/etc/nginx/`. Clone `snapshot.conf` to `sites-avaialable` then open the file in a text editor. Change the IP for the directive `server_name` to the IP of the current server. Then create a symbolic link to it in `enabled-sites`. If you add a new server block or modify existing configurations, you can validate your configuration using `sudo nginx -t`.  
+Replace `nginx.conf` in `/etc/nginx/` with the copy in this repository. Then create the directoires `sites-available` and `enabled-sites` in `/etc/nginx/`. Clone `snapshot.conf` to `sites-avaialable` then open the file in a text editor. Change the IP for the directive `server_name` to the IP of the current server. Then create a symbolic link to it in `sites-enabled`. If you add a new server block or modify existing configurations, you can validate your configuration using `sudo nginx -t`.  
 
 Once configuration is complete, enable the `nginx` service.  
 
